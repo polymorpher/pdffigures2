@@ -1,10 +1,6 @@
 import org.allenai.plugins.CoreDependencies.{allenAiCommon, allenAiTestkit}
 import sbtrelease.ReleaseStateTransformations._
 
-lazy val depProject = RootProject(uri("git://github.com/polymorpher/allenai-common.git#master"))
-
-lazy val root = (project in file(".")).dependsOn(depProject)
-
 name := "pdffigures2"
 
 scalaVersion := "2.12.4"
@@ -77,9 +73,9 @@ resolvers ++= Seq(
 conflictManager := ConflictManager.default
 
 libraryDependencies ++= Seq(
-//  "org.allenai.common" %% "common-core" % "1.4.9",
-//  "org.allenai.common" %% "common-testkit" % "1.4.9",
-  "io.spray" %% "spray-json" % "1.3.2",
+  "org.allenai.common" % "common-core_2.11" % "1.4.9",
+  "org.allenai.common" % "common-testkit_2.11" % "1.4.9",
+  "io.spray" % "spray-json_2.11" % "1.3.2",
   "com.github.scopt" %% "scopt" % "3.7.0",
   "ch.qos.logback" % "logback-classic" % "1.1.7",
   "org.slf4j" % "jcl-over-slf4j" % "1.7.21",
